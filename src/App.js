@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Form from './Components/Form';
+import CardList from './Components/CardList';
 
 const App = () => {
     const [cards, setCards] = useState([]);
@@ -11,6 +12,7 @@ const App = () => {
     return (
         <div>
             <Form onSubmit={addNewCard} />
+            <CardList cards={cards} />
         </div>
     );
 };

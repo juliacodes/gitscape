@@ -13,10 +13,10 @@ const Form = props => {
                 `https://api.github.com/search/repositories?q=${query}+language:${language}&sort=stars&order=desc`
             )
             .then(resp => {
-                props.onSubmit(resp.data);
+                props.onSubmit(resp.data.items[0]);
                 setQuery('');
                 setLanguage('');
-                console.log(resp.data.items);
+                console.log(resp.data.items[0]);
             })
             .catch(error => {
                 console.log(error);
