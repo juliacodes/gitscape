@@ -17,17 +17,6 @@ const Form = props => {
                 props.onSubmit(resp.data.items[0]);
                 console.log(resp.data.items);
                 for (let i = 0; i < 10; i++) {
-                    // setResults([
-                    //     ...results,
-                    //     {
-                    //         id: resp.data.items[i].id,
-                    //         repoName: resp.data.items[i].name,
-                    //         userName: resp.data.items[i].owner.login,
-                    //         stars: resp.data.items[i].stargazers_count,
-                    //         link: resp.data.items[i].git_url
-                    //     }
-                    // ]);
-
                     setResults(results => [
                         ...results,
                         {
