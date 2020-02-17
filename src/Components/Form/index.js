@@ -23,6 +23,9 @@ const Form = props => {
                             id: resp.data.items[i].id,
                             repoName: resp.data.items[i].name,
                             userName: resp.data.items[i].owner.login,
+                            description: resp.data.items[i].description,
+                            forks: resp.data.items[i].forks,
+                            issues: resp.data.items[i].open_issues,
                             stars: resp.data.items[i].stargazers_count,
                             link: resp.data.items[i].git_url
                         }
@@ -55,7 +58,14 @@ const Form = props => {
             <button type='submit'>Add card</button>
             <div>
                 {results.map(result => (
-                    <h1 key={result.id}>{result.repoName}</h1>
+                    <>
+                        <h1 key={result.id}>{result.repoName}</h1>
+                        <p>{result.userName}</p>
+                        <p>{result.description}</p>
+                        <p>Forks: {result.forks}</p>
+                        <p>stars: {result.stars}</p>
+                        <p>issues: {result.issues}</p>
+                    </>
                 ))}
             </div>
         </form>
