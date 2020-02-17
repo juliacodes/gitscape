@@ -12,6 +12,8 @@ const Form = props => {
         axios
             .get(
                 `https://api.github.com/search/repositories?q=${query}+language:${language}&sort=stars&order=desc`
+                // call for users
+                //https://api.github.com/search/users?q=tom+repos:%3E42+followers:%3E1000
             )
             .then(resp => {
                 props.onSubmit(resp.data.items[0]);
