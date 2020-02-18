@@ -1,13 +1,13 @@
 import React from 'react';
-
+import { CardWrap, CardCont } from './styles';
 const Card = props => {
     return (
-        <div style={{ margin: '1em' }}>
-            <div>
-                <h1>{props.name}</h1>
-                <h2>{props.owner.login}</h2>
-            </div>
-        </div>
+        <CardWrap>
+            <CardCont>
+                <h2>{props.name}</h2>
+                <p>{props.owner.login}</p>
+            </CardCont>
+        </CardWrap>
     );
 };
 

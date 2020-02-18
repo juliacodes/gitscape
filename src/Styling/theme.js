@@ -4,7 +4,7 @@ export const lightTheme = {
     heading: '#000000',
     paragraph: '#9D9D9D',
     lines: '#EAEAEA',
-    lineThickness: '1px'
+    search: '#000000'
 };
 
 export const darkTheme = {
@@ -13,5 +13,5 @@ export const darkTheme = {
     heading: '#FFFFFF',
     paragraph: '#9D9D9D',
     lines: '#34373C',
-    lineThickness: '.5px'
+    search: '#FFFFFF'
 };

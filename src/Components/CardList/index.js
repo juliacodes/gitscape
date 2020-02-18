@@ -1,12 +1,13 @@
 import React from 'react';
 import Card from '../Card';
+import { CardListCont } from './styles';
 
 const CardList = props => (
-    <div>
+    <CardListCont>
         {props.cards.map(card => (
             <Card {...card} />
         ))}
-    </div>
+    </CardListCont>
 );
 
 export default CardList;

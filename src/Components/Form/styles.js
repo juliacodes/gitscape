@@ -13,13 +13,17 @@ export const FormContainer = styled.form`
 
     svg {
         margin-right: 15px;
+
+        path {
+            fill: ${({ theme }) => theme.search};
+        }
     }
 
     input {
         height: 35px;
         border: none;
         background-color: ${({ theme }) => theme.overlay};
-        width: auto;
+        width: 100%;
         outline: none;
     }
 
@@ -32,5 +36,6 @@ export const FormContainer = styled.form`
         background-color: ${COLORS.pink};
         color: white;
         border: none;
+        outline: none;
     }
 `;

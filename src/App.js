@@ -21,7 +21,7 @@ const App = () => {
     const [cards, setCards] = useState([]);
 
     let addNewCard = cardInfo => {
-        setCards(cards.concat(cardInfo));
+        setCards(cardInfo);
     };
 
     return (
@@ -29,7 +29,7 @@ const App = () => {
             <Layout>
                 <GlobalStyles />
                 <Nav />
-                <Container style={{ marginLeft: 290, width: '50%' }}>
+                <Container style={{ marginLeft: 290, width: '60%' }}>
                     <button onClick={toggleTheme}>Toggle theme</button>
                     <Form onSubmit={addNewCard} />
                     <CardList cards={cards} />
