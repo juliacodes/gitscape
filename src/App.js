@@ -29,7 +29,7 @@ const App = () => {
             <Layout>
                 <GlobalStyles />
                 <Nav />
-                <Container style={{ marginLeft: 240 }}>
+                <Container style={{ marginLeft: 290, width: '50%' }}>
                     <button onClick={toggleTheme}>Toggle theme</button>
                     <Form onSubmit={addNewCard} />
                     <CardList cards={cards} />

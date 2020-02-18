@@ -4,8 +4,8 @@ const Card = props => {
     return (
         <div style={{ margin: '1em' }}>
             <div>
-                <div style={{ fontWeight: 'bold' }}>{props.id}</div>
-                <div>{props.id}</div>
+                <h1>{props.name}</h1>
+                <h2>{props.owner.login}</h2>
             </div>
         </div>
     );
