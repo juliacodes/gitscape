@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import 'circular-std';
+import { COLORS } from '../Styling/styles';
 
 export const GlobalStyles = createGlobalStyle`
   *,
@@ -16,20 +17,22 @@ export const GlobalStyles = createGlobalStyle`
     transition: all 0.25s linear;
   }
 
-  h1, h2{
+  h1, h2, h3{
     font-weight: 900;
     font-size: 42px;
-    line-height: 28px;
     display: flex;
     align-items: center;
     letter-spacing: 0.01em;
     padding: 0;
-    margin: 30px 0;
     color: ${({ theme }) => theme.heading};
   }
 
   h2{
     font-size: 32px;
+  }
+
+  h3{
+    font-size: 17px;
   }
 
   p{
@@ -42,12 +45,33 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   em{
+    display: block;
     font-weight: 900;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 10px;
     letter-spacing: 0.01em;
     color: ${({ theme }) => theme.paragraph};
     text-transform: uppercase;
     font-style: normal;
+  }
+
+  hr{
+    background-color: ${({ theme }) => theme.lines};
+    height: 2px;
+    border: none;
+    margin: 0 20px;
+  }
+
+  a {
+      text-decoration: none;
+  }
+
+  .active{
+      background-color: ${COLORS.lightGreen};
+      
+      h3{
+          color: ${COLORS.green} !important;
+      }
+
   }
 `;

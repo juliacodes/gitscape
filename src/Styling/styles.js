@@ -17,3 +17,15 @@ export const COLORS = {
     lightYellow: '#FEEEAF',
     yellow: '#FDC500'
 };
+
+export const Layout = styled.div`
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: ${({ theme }) => theme.main};
+`;
+
+export const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
