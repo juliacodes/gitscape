@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container } from '../../Styling/styles';
-// import { Link } from 'react-router-dom';
 import { NavContent, LogoCont, Menu, LinkCont } from './styles';
 const Nav = props => {
     return (

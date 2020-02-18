@@ -9,6 +9,7 @@ import Nav from './Components/Nav';
 
 const App = () => {
     const [theme, setTheme] = useState('light');
+
     const toggleTheme = () => {
         if (theme === 'light') {
             setTheme('dark');
@@ -28,12 +29,8 @@ const App = () => {
             <Layout>
                 <GlobalStyles />
                 <Nav />
-                <Container>
+                <Container style={{ marginLeft: 240 }}>
                     <button onClick={toggleTheme}>Toggle theme</button>
-                    <h1>Heading 1</h1>
-                    <h2>Heading 2</h2>
-                    <p>Lorem Ipsum</p>
-                    <em>hello</em>
                     <Form onSubmit={addNewCard} />
                     <CardList cards={cards} />
                 </Container>

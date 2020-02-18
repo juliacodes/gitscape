@@ -7,6 +7,7 @@ export const NavContent = styled.div`
     max-width: 240px;
     height: 100vh;
     background-color: ${({ theme }) => theme.overlay};
+    position: fixed;
 `;
 
 export const section = styled.div`
