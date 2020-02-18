@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import Card from '../Card';
 const Form = props => {
     const [query, setQuery] = useState('');
     const [language, setLanguage] = useState('');
@@ -61,12 +61,7 @@ const Form = props => {
             <div>
                 {results.map(result => (
                     <>
-                        <h1 key={result.id}>{result.repoName}</h1>
-                        <p>{result.userName}</p>
-                        <p>{result.description}</p>
-                        <p>Forks: {result.forks}</p>
-                        <p>stars: {result.stars}</p>
-                        <p>issues: {result.issues}</p>
+                        <Card {...result} />
                     </>
                 ))}
             </div>

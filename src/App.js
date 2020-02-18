@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Form from './Components/Form';
-import CardList from './Components/CardList';
+// import CardList from './Components/CardList';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './Styling/theme';
 import { GlobalStyles } from './Styling/global';
@@ -18,11 +18,11 @@ const App = () => {
         }
     };
 
-    const [cards, setCards] = useState([]);
+    // const [cards, setCards] = useState([]);
 
-    let addNewCard = cardInfo => {
-        setCards(cards.concat(cardInfo));
-    };
+    // let addNewCard = cardInfo => {
+    //     setCards(cards.concat(cardInfo));
+    // };
 
     return (
         <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
@@ -31,8 +31,8 @@ const App = () => {
                 <Nav />
                 <Container style={{ marginLeft: 240 }}>
                     <button onClick={toggleTheme}>Toggle theme</button>
-                    <Form onSubmit={addNewCard} />
-                    <CardList cards={cards} />
+                    <Form />
+                    {/* <CardList cards={cards} /> */}
                 </Container>
             </Layout>
         </ThemeProvider>
