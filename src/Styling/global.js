@@ -14,12 +14,13 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.heading};
     font-family: CircularStd;
     font-weight: 400;
-    transition: all 0.25s linear;
+    /* transition: all 0.25s linear; */
   }
 
   h1, h2, h3, h4{
     font-weight: 900;
-    font-size: 42px;
+    font-size: 32px;
+    margin-top: 55px;
     display: flex;
     align-items: center;
     letter-spacing: 0.01em;
@@ -29,14 +30,19 @@ export const GlobalStyles = createGlobalStyle`
 
   h2{
     font-size: 32px;
+    margin-top: unset;
   }
 
   h3{
     font-size: 17px;
+    margin-top: unset;
+
   }
 
   h4{
     font-size: 23px;
+    margin-top: 0;
+    margin-bottom: 15px;
   }
 
   p{
@@ -76,6 +82,5 @@ export const GlobalStyles = createGlobalStyle`
       h3{
           color: ${COLORS.green} !important;
       }
-
   }
 `;

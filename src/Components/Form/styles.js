@@ -3,7 +3,7 @@ import { COLORS } from '../../Styling/styles';
 
 export const FormContainer = styled.form`
     background-color: ${({ theme }) => theme.overlay};
-    height: 60px;
+    height: 70px;
     display: flex;
     align-items: center;
     width: 100%;

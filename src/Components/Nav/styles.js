@@ -50,3 +50,9 @@ export const Menu = styled.div`
         padding-bottom: 15px;
     }
 `;
+
+export const ToggleCont = styled.div`
+    position: absolute;
+    bottom: 40px;
+    left: 50px;
+`;

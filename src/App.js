@@ -10,13 +10,20 @@ import Nav from './Components/Nav';
 const App = () => {
     const [theme, setTheme] = useState('light');
 
-    const toggleTheme = () => {
+    function toggleTheme() {
         if (theme === 'light') {
             setTheme('dark');
         } else {
             setTheme('light');
         }
-    };
+    }
+    // const toggleTheme = () => {
+    //     if (theme === 'light') {
+    //         setTheme('dark');
+    //     } else {
+    //         setTheme('light');
+    //     }
+    // };
 
     const [cards, setCards] = useState([]);
 
@@ -28,12 +35,12 @@ const App = () => {
         <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
             <Layout>
                 <GlobalStyles />
-                <Nav />
-                <Container style={{ marginLeft: 290, width: '60%' }}>
-                    <button style={{ width: 100 }} onClick={toggleTheme}>
-                        Toggle theme
-                    </button>
+                <Nav onClick={toggleTheme} />
+                <Container
+                    style={{ marginLeft: 380, width: '45%', marginTop: 50 }}
+                >
                     <Form onSubmit={addNewCard} />
+                    <h1>Discover Repositories</h1>
                     <CardList cards={cards} />
                 </Container>
             </Layout>

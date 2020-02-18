@@ -1,7 +1,10 @@
 import React from 'react';
 import { Container } from '../../Styling/styles';
-import { NavContent, LogoCont, Menu, LinkCont } from './styles';
+import { NavContent, LogoCont, Menu, LinkCont, ToggleCont } from './styles';
 const Nav = props => {
+    function toggleTheme(event) {
+        props.onClick(event.target);
+    }
     return (
         <Container>
             <NavContent>
@@ -64,6 +67,18 @@ const Nav = props => {
                         </LinkCont>
                     </a>
                 </Menu>
+                <ToggleCont>
+                    <div class='can-toggle'>
+                        <input id='a' type='checkbox' onClick={toggleTheme} />
+                        <label for='a'>
+                            <div
+                                class='can-toggle__switch'
+                                data-checked='Dark'
+                                data-unchecked='Light'
+                            ></div>
+                        </label>
+                    </div>
+                </ToggleCont>
             </NavContent>
         </Container>
     );

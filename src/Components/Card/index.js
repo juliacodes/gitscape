@@ -1,11 +1,14 @@
 import React from 'react';
+import Moment from 'react-moment';
 import { CardWrap, CardCont } from './styles';
 const Card = props => {
     return (
         <CardWrap>
             <CardCont>
                 <h4>{props.name}</h4>
-                <p>{props.updated_at}</p>
+                <Moment format='MMMM Do, YYYY' withTitle>
+                    {props.updated_at}
+                </Moment>
                 <p>{props.description}</p>
             </CardCont>
         </CardWrap>
