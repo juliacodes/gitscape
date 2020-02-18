@@ -4,8 +4,9 @@ const Card = props => {
     return (
         <CardWrap>
             <CardCont>
-                <h2>{props.name}</h2>
-                <p>{props.owner.login}</p>
+                <h4>{props.name}</h4>
+                <p>{props.updated_at}</p>
+                <p>{props.description}</p>
             </CardCont>
         </CardWrap>
     );

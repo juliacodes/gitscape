@@ -17,7 +17,7 @@ export const GlobalStyles = createGlobalStyle`
     transition: all 0.25s linear;
   }
 
-  h1, h2, h3{
+  h1, h2, h3, h4{
     font-weight: 900;
     font-size: 42px;
     display: flex;
@@ -33,6 +33,10 @@ export const GlobalStyles = createGlobalStyle`
 
   h3{
     font-size: 17px;
+  }
+
+  h4{
+    font-size: 23px;
   }
 
   p{

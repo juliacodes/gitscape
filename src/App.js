@@ -30,7 +30,9 @@ const App = () => {
                 <GlobalStyles />
                 <Nav />
                 <Container style={{ marginLeft: 290, width: '60%' }}>
-                    <button onClick={toggleTheme}>Toggle theme</button>
+                    <button style={{ width: 100 }} onClick={toggleTheme}>
+                        Toggle theme
+                    </button>
                     <Form onSubmit={addNewCard} />
                     <CardList cards={cards} />
                 </Container>
