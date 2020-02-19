@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
-import { FormContainer } from './styles';
+import {
+    FormContainer,
+    Search,
+    FilterCont,
+    Filter,
+    FilterDrop
+} from './styles';
 import axios from 'axios';
 
 const Form = props => {
     const [query, setQuery] = useState('');
+    const [filter, setFilter] = useState(false);
     //const [language, setLanguage] = useState('');
 
     let handleSubmit = event => {
@@ -25,9 +32,14 @@ const Form = props => {
             });
     };
 
+    let handleFilter = () => {
+        filter ? setFilter(false) : setFilter(true);
+    };
+
     return (
         <FormContainer onSubmit={handleSubmit}>
             <svg
+                className='search'
                 width='16'
                 height='16'
                 viewBox='0 0 16 16'
@@ -54,7 +66,31 @@ const Form = props => {
                 placeholder='language'
                 required
             /> */}
-            <button type='submit'>Search</button>
+            <FilterCont onClick={handleFilter}>
+                <Filter
+                    width='20'
+                    height='20'
+                    viewBox='0 0 20 20'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
+                    onClick=''
+                >
+                    <path
+                        d='M6.79618 15.6787C6.79618 16.0016 7.05516 16.2624 7.37616 16.2624H12.1619C12.4829 16.2624 12.7419 16.0016 12.7419 15.6787V12.104H6.79618V15.6787ZM16.4826 3.20361H3.05546C2.60862 3.20361 2.32957 3.69058 2.5539 4.07906L6.59008 10.9367H12.9517L16.9878 4.07906C17.2085 3.69058 16.9295 3.20361 16.4826 3.20361V3.20361Z'
+                        fill='#C8C8C8'
+                    />
+                </Filter>
+                {filter && (
+                    <FilterDrop>
+                        <em>sort by</em>
+                        <p>Most Recent</p>
+                        <p>Most Stars</p>
+                        <p>Least Stars</p>
+                        <p>Trending</p>
+                    </FilterDrop>
+                )}
+            </FilterCont>
+            <Search type='submit'>Search</Search>
         </FormContainer>
     );
 };

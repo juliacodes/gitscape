@@ -17,14 +17,6 @@ const App = () => {
             setTheme('light');
         }
     }
-    // const toggleTheme = () => {
-    //     if (theme === 'light') {
-    //         setTheme('dark');
-    //     } else {
-    //         setTheme('light');
-    //     }
-    // };
-
     const [cards, setCards] = useState([]);
 
     let addNewCard = cardInfo => {
@@ -36,9 +28,7 @@ const App = () => {
             <Layout>
                 <GlobalStyles />
                 <Nav onClick={toggleTheme} />
-                <Container
-                    style={{ marginLeft: 380, width: '45%', marginTop: 50 }}
-                >
+                <Container style={{ margin: '50px auto 0 auto', width: '45%' }}>
                     <Form onSubmit={addNewCard} />
                     <h1>Discover Repositories</h1>
                     <CardList cards={cards} />

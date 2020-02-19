@@ -21,6 +21,8 @@ export const COLORS = {
 export const Layout = styled.div`
     width: 100vw;
     height: 100vh;
+    max-width: 2000px;
+    margin: 0 auto;
     display: flex;
     background-color: ${({ theme }) => theme.main};
 `;
