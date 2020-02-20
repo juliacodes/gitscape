@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React, { useState } from 'react';
 import {
     FormContainer,
@@ -11,29 +12,71 @@ import axios from 'axios';
 const Form = props => {
     const [query, setQuery] = useState('');
     const [filter, setFilter] = useState(false);
+    const [sort, setSort] = useState('stars');
+    const [order, setOrder] = useState('desc');
+
     //const [language, setLanguage] = useState('');
 
     let handleSubmit = event => {
         event.preventDefault();
         axios
             .get(
-                `https://api.github.com/search/repositories?q=${query}+language:javascript&sort=stars&order=desc`
-                // call for users
-                //https://api.github.com/search/users?q=tom+repos:%3E42+followers:%3E1000
+                `https://api.github.com/search/repositories?q=${query}+language:javascript&sort=${sort}&order=${order}`
+                // user call 🌙 https://api.github.com/search/users?q=tom+repos:%3E42+followers:%3E1000
             )
             .then(resp => {
                 props.onSubmit(resp.data.items);
                 console.log(resp.data.items);
-                setQuery('');
-                // setLanguage('');
+                // setQuery('');
             })
             .catch(error => {
                 console.log(error);
             });
     };
 
+    let handleSort = () => {
+        let currentOrder = '';
+
+        order === 'asc'
+            ? (setOrder('desc'), (currentOrder = 'desc'))
+            : (setOrder('asc'), (currentOrder = 'asc'));
+
+        axios
+            .get(
+                `https://api.github.com/search/repositories?q=${query}+language:javascript&sort=${sort}&order=${currentOrder}`
+            )
+            .then(resp => {
+                props.onSubmit(resp.data.items);
+                console.log(resp.data.items);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    };
+
+    let handleTrending = () => {
+        // https://github.com/huchenme/github-trending-api
+    };
+
     let handleFilter = () => {
         filter ? setFilter(false) : setFilter(true);
+    };
+
+    let handleRecent = () => {
+        let sortUpdated = 'updated';
+        setSort('updated');
+
+        axios
+            .get(
+                `https://api.github.com/search/repositories?q=${query}+language:javascript&sort=${sortUpdated}&order=desc`
+            )
+            .then(resp => {
+                props.onSubmit(resp.data.items);
+                console.log(resp.data.items);
+            })
+            .catch(error => {
+                console.log(error);
+            });
     };
 
     return (
@@ -51,7 +94,6 @@ const Form = props => {
                     fill='black'
                 />
             </svg>
-
             <input
                 type='text'
                 value={query}
@@ -59,13 +101,6 @@ const Form = props => {
                 placeholder='search by keyword'
                 required
             />
-            {/* <input
-                type='text'
-                value={language}
-                onChange={event => setLanguage(event.target.value)}
-                placeholder='language'
-                required
-            /> */}
             <FilterCont onClick={handleFilter}>
                 <Filter
                     width='20'
@@ -83,9 +118,9 @@ const Form = props => {
                 {filter && (
                     <FilterDrop>
                         <em>sort by</em>
-                        <p>Most Recent</p>
-                        <p>Most Stars</p>
-                        <p>Least Stars</p>
+                        <p onClick={handleRecent}>Most Recent</p>
+                        <p onClick={handleSort}>Most Stars</p>
+                        <p onClick={handleSort}>Least Stars</p>
                         <p>Trending</p>
                     </FilterDrop>
                 )}
