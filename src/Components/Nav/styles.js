@@ -60,3 +60,28 @@ export const ToggleCont = styled.div`
     bottom: 40px;
     left: 50px;
 `;
+
+export const Input = styled.input`
+    width: 140px;
+    margin: 10px 0 12px 55px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background-color: ${({ theme }) => theme.main};
+    color: ${({ theme }) => theme.paragraph};
+    padding: 12px 12px;
+    font-weight: 900;
+    font-size: 11px;
+
+    ::placeholder {
+        color: ${({ theme }) => theme.paragraph};
+    }
+`;
+
+export const Checkbox = styled.div`
+    margin: 10px 0 0 55px;
+
+    input {
+        font-weight: 900;
+    }
+`;

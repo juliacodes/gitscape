@@ -5,7 +5,8 @@ export const lightTheme = {
     paragraph: '#9D9D9D',
     lines: '#EAEAEA',
     search: '#000000',
-    shadow: '0px 0px 16.1621px rgba(0, 0, 0, 0.1)'
+    shadow: '0px 0px 16.1621px rgba(0, 0, 0, 0.1)',
+    filter: '#B1B1B1'
 };
 
 export const darkTheme = {
@@ -15,5 +16,6 @@ export const darkTheme = {
     paragraph: '#9D9D9D',
     lines: '#34373C',
     search: '#FFFFFF',
-    shadow: '0px 0px 16.1679px rgba(0, 0, 0, 0.27)'
+    shadow: '0px 0px 16.1679px rgba(0, 0, 0, 0.27)',
+    filter: '#FFFFFF'
 };

@@ -1,6 +1,14 @@
 import React from 'react';
 import { Container } from '../../Styling/styles';
-import { NavContent, LogoCont, Menu, LinkCont, ToggleCont } from './styles';
+import {
+    NavContent,
+    LogoCont,
+    Menu,
+    LinkCont,
+    ToggleCont,
+    Input,
+    Checkbox
+} from './styles';
 const Nav = props => {
     function toggleTheme(event) {
         props.onClick(event.target);
@@ -66,6 +74,26 @@ const Nav = props => {
                             <h3>Trending</h3>
                         </LinkCont>
                     </a>
+                </Menu>
+                <Menu>
+                    <em>language</em>
+                    <Input
+                        type='text'
+                        // value={query}
+                        // onChange={event => setQuery(event.target.value)}
+                        placeholder='Search'
+                        required
+                    />
+                    <br />
+                    <Checkbox>
+                        <input
+                            type='checkbox'
+                            id='vehicle1'
+                            name='vehicle1'
+                            value='Bike'
+                        />
+                        <label for='vehicle1'> Javascript</label>
+                    </Checkbox>
                 </Menu>
                 <ToggleCont>
                     <div class='can-toggle'>
