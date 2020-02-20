@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Logo from '../../Images/logo.png';
-
+import Check from '../../Images/check.png';
 export const NavContent = styled.div`
     width: 20vw;
     min-width: 240px;
@@ -80,9 +80,45 @@ export const Input = styled.input`
 
 export const Checkbox = styled.div`
     margin: 10px 0 0 55px;
+    display: flex;
+    align-items: center;
+    position: relative;
 
-    input {
+    input,
+    input:checked {
         font-weight: 900;
+        height: 20px;
+        width: 20px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+        transition-duration: 0.3s;
+        background-color: ${({ theme }) => theme.main};
+        cursor: pointer;
+    }
+
+    input:checked {
+        background-color: #1371e0;
+
+        ::after {
+            position: absolute;
+            content: '';
+            background-image: url(${Check});
+            top: 6px;
+            left: 4px;
+            width: 16px;
+            height: 20px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    label {
+        margin-left: 10px;
     }
 `;
 

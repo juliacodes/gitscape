@@ -10,7 +10,7 @@ export const CardWrap = styled.div`
 `;
 
 export const CardCont = styled.div`
-    height: 200px;
+    height: 230px;
     position: relative;
     display: flex;
 `;
@@ -23,7 +23,21 @@ export const LeftContent = styled.div`
 
     p {
         align-self: unset;
+        max-height: 60px;
+        overflow: hidden;
     }
+`;
+
+export const Language = styled.div`
+    margin: 10px 0 0 0;
+    height: auto !important;
+    max-width: 72px;
+    text-align: center;
+    padding: 5px;
+    background-color: #e8f3ff;
+    color: #1581ff;
+    border-radius: 5px;
+    font-size: 12px;
 `;
 
 export const RightContent = styled.div`

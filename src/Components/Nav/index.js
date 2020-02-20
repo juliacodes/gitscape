@@ -88,11 +88,21 @@ const Nav = props => {
                     <Checkbox>
                         <input
                             type='checkbox'
+                            checked
                             id='vehicle1'
                             name='vehicle1'
                             value='Bike'
                         />
                         <label for='vehicle1'> Javascript</label>
+                    </Checkbox>
+                    <Checkbox>
+                        <input
+                            type='checkbox'
+                            id='vehicle1'
+                            name='vehicle1'
+                            value='Bike'
+                        />
+                        <label for='vehicle1'> Typescript</label>
                     </Checkbox>
                 </Menu>
                 <ToggleCont>

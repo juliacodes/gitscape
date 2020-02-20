@@ -1,6 +1,13 @@
 import React from 'react';
 import Moment from 'react-moment';
-import { CardWrap, CardCont, RightContent, LeftContent, Count } from './styles';
+import {
+    CardWrap,
+    CardCont,
+    RightContent,
+    LeftContent,
+    Count,
+    Language
+} from './styles';
 var numeral = require('numeral');
 const Card = props => {
     return (
@@ -14,7 +21,7 @@ const Card = props => {
                         {props.updated_at}
                     </Moment>
                     <p>{props.description}</p>
-                    {/* <p>{props.stargazers_count}</p> */}
+                    <Language>{props.language}</Language>
                 </LeftContent>
                 <RightContent>
                     <Count>
