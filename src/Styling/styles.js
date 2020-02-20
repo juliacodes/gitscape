@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const QUERIES = {
+    large: `min-width: 1200px`,
     medium: `min-width: 1092px`,
     small: `min-width: 552px`,
     maxWidth: `1500px`

@@ -85,3 +85,9 @@ export const Checkbox = styled.div`
         font-weight: 900;
     }
 `;
+
+export const RightContent = styled.div`
+    position: absolute;
+    right: 0;
+    height: 100%;
+`;
