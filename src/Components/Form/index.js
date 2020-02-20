@@ -36,6 +36,7 @@ const Form = props => {
 
     let handleSort = () => {
         let currentOrder = '';
+        setSort('stars');
 
         order === 'asc'
             ? (setOrder('desc'), (currentOrder = 'desc'))
@@ -43,7 +44,7 @@ const Form = props => {
 
         axios
             .get(
-                `https://api.github.com/search/repositories?q=${query}+language:javascript&sort=${sort}&order=${currentOrder}`
+                `https://api.github.com/search/repositories?q=${query}+language:javascript&sort=stars&order=${currentOrder}`
             )
             .then(resp => {
                 props.onSubmit(resp.data.items);

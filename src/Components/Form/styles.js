@@ -23,6 +23,7 @@ export const FormContainer = styled.form`
         height: 35px;
         border: none;
         background-color: ${({ theme }) => theme.overlay};
+        color: ${({ theme }) => theme.search};
         width: 100%;
         outline: none;
     }

@@ -10,6 +10,7 @@ const Card = props => {
                     {props.updated_at}
                 </Moment>
                 <p>{props.description}</p>
+                <p>{props.stargazers_count}</p>
             </CardCont>
         </CardWrap>
     );

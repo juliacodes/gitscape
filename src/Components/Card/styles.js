@@ -10,5 +10,5 @@ export const CardWrap = styled.div`
 `;
 
 export const CardCont = styled.div`
-    height: 160px;
+    height: auto;
 `;
