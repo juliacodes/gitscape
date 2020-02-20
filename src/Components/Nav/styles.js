@@ -32,6 +32,10 @@ export const LinkCont = styled.div`
     align-items: center;
     margin: 15px 0;
 
+    :hover {
+        background-color: ${({ theme }) => theme.lines};
+    }
+
     svg {
         margin-right: 15px;
         width: 23px;

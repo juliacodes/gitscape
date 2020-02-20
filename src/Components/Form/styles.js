@@ -27,14 +27,6 @@ export const FormContainer = styled.form`
         outline: none;
     }
 `;
-export const FilterCont = styled.div`
-    width: auto;
-    height: 100%;
-    border-left: 1px solid ${({ theme }) => theme.lines};
-    padding-left: 30px;
-    position: absolute;
-    right: 130px;
-`;
 
 export const Filter = styled.svg`
     height: 100%;
@@ -42,6 +34,15 @@ export const Filter = styled.svg`
     path {
         fill: ${({ theme }) => theme.paragraph};
     }
+`;
+
+export const FilterCont = styled.div`
+    width: auto;
+    height: 100%;
+    border-left: 1px solid ${({ theme }) => theme.lines};
+    padding-left: 30px;
+    position: absolute;
+    right: 130px;
 `;
 
 export const FilterDrop = styled.div`
@@ -52,12 +53,23 @@ export const FilterDrop = styled.div`
     margin-top: 10px;
     right: 0;
     border-radius: 8px;
-    padding: 20px 15px;
+    padding: 20px 0;
+    box-shadow: ${({ theme }) => theme.shadow};
+
+    em {
+        padding-left: 15px;
+        margin-bottom: 10px;
+    }
 
     p {
         color: ${({ theme }) => theme.heading};
         font-size: 17px;
-        margin: 20px 0;
+        margin: 0;
+        padding: 10px 0 10px 15px;
+        width: 100%;
+        :hover {
+            background-color: ${({ theme }) => theme.lines};
+        }
     }
 `;
 
