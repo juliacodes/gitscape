@@ -106,7 +106,7 @@ const Nav = props => {
                     </Checkbox>
                 </Menu>
                 <ToggleCont>
-                    <div class='can-toggle'>
+                    <div className='can-toggle'>
                         <input id='a' type='checkbox' onClick={toggleTheme} />
                         <label for='a'>
                             <div

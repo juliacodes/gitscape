@@ -33,13 +33,21 @@ export const Container = styled.div`
     flex-direction: column;
 `;
 
-export const RightContainer = styled(Container)`
+export const MainContainer = styled(Container)`
     margin: 50px 30px 0 30px;
     width: calc(100% - 240px);
 
     @media (${QUERIES.large}) {
-        margin: 50px auto 0 auto;
+        margin: 50px 8vw 0 8vw;
         width: 65%;
         max-width: 800px;
     }
+`;
+
+export const RightContainer = styled(Container)`
+    background-color: ${({ theme }) => theme.overlay};
+    height: 500px;
+    width: 300px;
+    margin-top: 180px;
+    border-radius: 6px;
 `;
