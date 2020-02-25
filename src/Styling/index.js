@@ -1,1 +1,1 @@
-export { QUERIES, COLORS, Layout, Container } from './styles';
+export { QUERIES, COLORS, Layout, Container, RightContainer } from './styles';

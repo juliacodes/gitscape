@@ -14,7 +14,7 @@ const Nav = props => {
         props.onClick(event.target);
     }
     return (
-        <Container>
+        <Container style={{ width: 240 }}>
             <NavContent>
                 <LogoCont />
                 <hr />

@@ -4,7 +4,7 @@ import CardList from './Components/CardList';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './Styling/theme';
 import { GlobalStyles } from './Styling/global';
-import { Layout, Container } from './Styling/styles';
+import { Layout, RightContainer } from './Styling/styles';
 import Nav from './Components/Nav';
 
 const App = () => {
@@ -28,11 +28,11 @@ const App = () => {
             <Layout>
                 <GlobalStyles />
                 <Nav onClick={toggleTheme} />
-                <Container style={{ margin: '50px auto 0 auto', width: '45%' }}>
+                <RightContainer>
                     <Form onSubmit={addNewCard} />
                     <h1>Discover Repositories</h1>
                     <CardList cards={cards} />
-                </Container>
+                </RightContainer>
             </Layout>
         </ThemeProvider>
     );
