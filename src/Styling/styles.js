@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const QUERIES = {
-    large: `min-width: 1200px`,
+    large: `min-width: 1300px`,
     medium: `min-width: 870px`,
     small: `min-width: 660px`,
     maxWidth: `1500px`
@@ -38,8 +38,8 @@ export const MainContainer = styled(Container)`
     width: calc(100% - 240px);
 
     @media (${QUERIES.large}) {
-        margin: 50px 8vw 0 8vw;
-        width: 65%;
+        margin: 50px 8vw 0 10vw;
+        width: 45vw;
         max-width: 800px;
     }
 `;
@@ -50,4 +50,10 @@ export const RightContainer = styled(Container)`
     width: 300px;
     margin-top: 180px;
     border-radius: 6px;
+    display: none;
+    margin-right: 20px;
+
+    @media (${QUERIES.large}) {
+        display: block;
+    }
 `;
