@@ -34,7 +34,7 @@ export const Container = styled.div`
 `;
 
 export const MainContainer = styled(Container)`
-    margin: 50px 30px 0 30px;
+    margin: 50px 60px 0 60px;
     width: calc(100% - 240px);
 
     @media (${QUERIES.large}) {
