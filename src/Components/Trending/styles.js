@@ -2,7 +2,9 @@ import styled from 'styled-components';
 import { RightContainer } from '../../Styling/styles';
 
 export const TrendingCont = styled(RightContainer)`
-    padding: 30px 15px 0 15px;
+    padding: 30px 15px 30px 15px;
+    width: 300px;
+    height: fit-content;
 
     hr {
         width: 100%;
