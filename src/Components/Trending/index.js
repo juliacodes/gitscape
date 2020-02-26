@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import { Container } from '../../Styling/styles';
-import { TrendingCont } from './styles';
+import { TrendingCont, UserIcon } from './styles';
+import { Language } from '../Card/styles';
 
 class Trending extends React.Component {
     constructor() {
@@ -9,15 +10,17 @@ class Trending extends React.Component {
         this.state = {
             trending1: [],
             trending2: [],
+            users: [],
             randomNum: Math.floor(Math.random() * Math.floor(10)),
-            randomNum2: Math.floor(Math.random() * Math.floor(10))
+            randomNum2: Math.floor(Math.random() * Math.floor(10)),
+            language: 'javascript'
         };
     }
 
     componentDidMount() {
         axios
             .get(
-                `https://github-trending-api.now.sh/repositories?language=javascript&since=weekly`
+                `https://github-trending-api.now.sh/repositories?language=${this.state.language}&since=weekly`
             )
             .then(resp => {
                 this.setState({
@@ -28,8 +31,27 @@ class Trending extends React.Component {
             .catch(error => {
                 console.log('Trending error');
             });
+
+        axios
+            .get(
+                `https://github-trending-api.now.sh/developers?language=${this.state.language}&since=weekly`
+            )
+            .then(resp => {
+                this.setState({
+                    users: resp.data
+                });
+                console.log(this.state.users);
+            })
+            .catch(error => {
+                console.log('Trending User error');
+            });
     }
     render() {
+        const userList = this.state.users.slice(0, 10).map(user => (
+            // Wrong! The key should have been specified here:
+            <UserIcon src={user.avatar} />
+        ));
+
         return (
             <TrendingCont>
                 <Container
@@ -76,6 +98,7 @@ class Trending extends React.Component {
                 >
                     <h3>{this.state.trending1.author}</h3>
                     <p>{this.state.trending1.description}</p>
+                    <Language>{this.state.trending1.language}</Language>
                 </Container>
                 <Container
                     style={{
@@ -84,6 +107,27 @@ class Trending extends React.Component {
                 >
                     <h3>{this.state.trending2.author}</h3>
                     <p>{this.state.trending2.description}</p>
+                    <Language>{this.state.trending2.language}</Language>
+                </Container>
+                <hr style={{ margin: '40px 0 20px 0' }} />
+                <Container>
+                    <h4 style={{ fontSize: 19 }}>Trending Users</h4>
+                </Container>
+                <Container
+                    style={{
+                        flexDirection: 'column'
+                    }}
+                >
+                    <Container
+                        style={{
+                            flexDirection: 'row',
+                            flexWrap: 'wrap',
+                            width: '100%',
+                            justifyContent: 'space-around'
+                        }}
+                    >
+                        {userList}
+                    </Container>
                 </Container>
             </TrendingCont>
         );
