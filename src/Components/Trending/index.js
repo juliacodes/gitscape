@@ -48,8 +48,9 @@ class Trending extends React.Component {
     }
     render() {
         const userList = this.state.users.slice(0, 10).map(user => (
-            // Wrong! The key should have been specified here:
-            <UserIcon src={user.avatar} />
+            <a href={user.url}>
+                <UserIcon src={user.avatar} />
+            </a>
         ));
 
         return (
