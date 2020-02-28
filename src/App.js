@@ -11,16 +11,6 @@ import Nav from './Components/Nav';
 
 const App = () => {
     const [theme, setTheme] = useState('light');
-    const [scroll, setScroll] = useState(false);
-
-    window.addEventListener('scroll', handleScroll);
-    function handleScroll() {
-        if (window.pageYOffset >= 500) {
-            setScroll(true);
-        } else {
-            setScroll(false);
-        }
-    }
 
     function toggleTheme() {
         if (theme === 'light') {
@@ -46,15 +36,7 @@ const App = () => {
                     <CardList cards={cards} />
                 </MainContainer>
                 <Trending />
-                <h2
-                    style={
-                        scroll
-                            ? { position: 'fixed', right: 40, bottom: 0 }
-                            : { display: 'none' }
-                    }
-                >
-                    SCROLLED DOWN
-                </h2>
+                {/* <UpArrow /> */}
             </Layout>
         </ThemeProvider>
     );

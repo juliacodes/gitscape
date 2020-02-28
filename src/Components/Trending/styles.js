@@ -5,6 +5,7 @@ export const TrendingCont = styled(RightContainer)`
     padding: 30px 15px 30px 15px;
     width: 300px;
     height: fit-content;
+    position: relative;
 
     hr {
         width: 100%;

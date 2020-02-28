@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Container } from '../../Styling/styles';
 import { TrendingCont, UserIcon } from './styles';
 import { Language } from '../Card/styles';
-
+import UpArrow from '../UpArrow';
 class Trending extends React.Component {
     constructor() {
         super();
@@ -130,6 +130,7 @@ class Trending extends React.Component {
                         {userList}
                     </Container>
                 </Container>
+                <UpArrow />
             </TrendingCont>
         );
     }
