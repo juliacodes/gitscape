@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-expressions */
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
     FormContainer,
     Search,
@@ -15,14 +15,29 @@ const Form = props => {
     const [sort, setSort] = useState('stars');
     const [order, setOrder] = useState('desc');
 
-    //const [language, setLanguage] = useState('');
+    const firstRenderRef = useRef(true);
+
+    useEffect(() => {
+        if (firstRenderRef.current) {
+            axios
+                .get(
+                    `https://github-trending-api.now.sh/repositories?language=javascript&since=weekly`
+                )
+                .then(resp => {
+                    firstRenderRef.current = false;
+                    props.onSubmit(resp.data);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+    }, [props]);
 
     let handleSubmit = event => {
         event.preventDefault();
         axios
             .get(
                 `https://api.github.com/search/repositories?q=${query}+language:javascript&sort=${sort}&order=${order}`
-                // user call 🌙 https://api.github.com/search/users?q=tom+repos:%3E42+followers:%3E1000
             )
             .then(resp => {
                 props.onSubmit(resp.data.items);
@@ -53,10 +68,6 @@ const Form = props => {
             .catch(error => {
                 console.log(error);
             });
-    };
-
-    let handleTrending = () => {
-        // https://github.com/huchenme/github-trending-api
     };
 
     let handleFilter = () => {

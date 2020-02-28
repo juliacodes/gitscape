@@ -37,8 +37,28 @@ const Card = props => {
                                 fill='#FEF499'
                             />
                         </svg>
+                        {isNaN(props.stargazers_count) &&
+                            !isNaN(props.stars) && (
+                                <p>{numeral(props.stars).format('0a')}</p>
+                            )}
 
-                        <p>{numeral(props.stargazers_count).format('0a')}</p>
+                        {!isNaN(props.stargazers_count) &&
+                            isNaN(props.stars) && (
+                                <p>
+                                    {numeral(props.stargazers_count).format(
+                                        '0a'
+                                    )}
+                                </p>
+                            )}
+
+                        {isNaN(props.stargazers_count) &&
+                            isNaN(props.stars) && (
+                                <p>
+                                    {numeral(props.stargazers_count).format(
+                                        '0a'
+                                    )}
+                                </p>
+                            )}
                     </Count>
                     <Count>
                         <svg
