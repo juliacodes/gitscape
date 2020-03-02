@@ -14,9 +14,17 @@ const Card = props => {
         <CardWrap>
             <CardCont>
                 <LeftContent>
-                    <a href={props.html_url}>
-                        <h4>{props.name}</h4>
-                    </a>
+                    {!props.html_url && (
+                        <a href={props.url}>
+                            <h4>{props.name}</h4>
+                        </a>
+                    )}
+                    {props.html_url && (
+                        <a href={props.html_url}>
+                            <h4>{props.name}</h4>
+                        </a>
+                    )}
+
                     <Moment format='MMMM Do, YYYY' withTitle>
                         {props.updated_at}
                     </Moment>
