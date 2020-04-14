@@ -1,26 +1,26 @@
 import React from 'react';
-import { Container } from '../../Styling/styles';
 import {
+    ContainerNav,
     NavContent,
     LogoCont,
     Menu,
     LinkCont,
     ToggleCont,
     Input,
-    Checkbox
+    Checkbox,
 } from './styles';
-const Nav = props => {
+const Nav = (props) => {
     function toggleTheme(event) {
         props.onClick(event.target);
     }
     return (
-        <Container style={{ width: 240 }}>
+        <ContainerNav>
             <NavContent>
                 <LogoCont />
                 <hr />
                 <Menu>
                     <em>menu</em>
-                    <a href=''>
+                    <a href='/'>
                         <LinkCont className='active'>
                             <svg
                                 width='24'
@@ -38,7 +38,7 @@ const Nav = props => {
                             <h3>Home</h3>
                         </LinkCont>
                     </a>
-                    <a href=''>
+                    <a href='/'>
                         <LinkCont>
                             <svg
                                 width='23'
@@ -54,24 +54,6 @@ const Nav = props => {
                             </svg>
 
                             <h3>Categories</h3>
-                        </LinkCont>
-                    </a>
-                    <a href=''>
-                        <LinkCont>
-                            <svg
-                                width='19'
-                                height='12'
-                                viewBox='0 0 19 12'
-                                fill='none'
-                                xmlns='http://www.w3.org/2000/svg'
-                            >
-                                <path
-                                    d='M13.8931 0.580566C13.5092 0.580566 13.3169 1.0448 13.5884 1.31631L14.6041 2.33199C14.7724 2.5003 14.7724 2.77319 14.6041 2.9415L10.8318 6.71372C10.6635 6.88203 10.3906 6.88203 10.2223 6.71372L7.24047 3.73186C7.07208 3.56346 6.79903 3.56355 6.63075 3.73206L0.586449 9.78452C0.418331 9.95286 0.418423 10.2256 0.586655 10.3938L1.24338 11.0506C1.41169 11.2189 1.68458 11.2189 1.85289 11.0506L6.63075 6.27269C6.79906 6.10438 7.07195 6.10438 7.24026 6.27269L10.2226 9.255C10.3908 9.42322 10.6635 9.42333 10.8318 9.25525L15.8791 4.21603C16.0474 4.04794 16.3201 4.04805 16.4883 4.21627L17.5043 5.23219C17.7758 5.5037 18.24 5.31141 18.24 4.92744V1.01156C18.24 0.773527 18.047 0.580566 17.809 0.580566H13.8931Z'
-                                    fill='#C0C0C0'
-                                />
-                            </svg>
-
-                            <h3>Trending</h3>
                         </LinkCont>
                     </a>
                 </Menu>
@@ -118,7 +100,7 @@ const Nav = props => {
                     </div>
                 </ToggleCont>
             </NavContent>
-        </Container>
+        </ContainerNav>
     );
 };
 

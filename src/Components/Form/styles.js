@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLORS } from '../../Styling/styles';
+import { COLORS, QUERIES } from '../../Styling/styles';
 
 export const FormContainer = styled.form`
     background-color: ${({ theme }) => theme.overlay};
@@ -41,9 +41,14 @@ export const FilterCont = styled.div`
     width: auto;
     height: 100%;
     border-left: 1px solid ${({ theme }) => theme.lines};
-    padding-left: 30px;
+    padding-left: 20px;
     position: absolute;
-    right: 130px;
+    right: 0;
+
+    @media (${QUERIES.large}) {
+        right: 130px;
+        padding-left: 30px;
+    }
 `;
 
 export const FilterDrop = styled.div`
@@ -84,4 +89,9 @@ export const Search = styled.button`
     color: white;
     border: none;
     outline: none;
+    display: none;
+
+    @media (${QUERIES.large}) {
+        display: block;
+    }
 `;

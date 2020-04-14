@@ -4,7 +4,7 @@ export const QUERIES = {
     large: `min-width: 1300px`,
     medium: `min-width: 870px`,
     small: `min-width: 660px`,
-    maxWidth: `1500px`
+    maxWidth: `1500px`,
 };
 
 export const COLORS = {
@@ -16,7 +16,7 @@ export const COLORS = {
     lightOrange: '#FFE9C8',
     orange: '#FFA115',
     lightYellow: '#FEEEAF',
-    yellow: '#FDC500'
+    yellow: '#FDC500',
 };
 
 export const Layout = styled.div`
@@ -34,8 +34,8 @@ export const Container = styled.div`
 `;
 
 export const MainContainer = styled(Container)`
-    margin: 50px 60px 0 60px;
-    width: calc(100% - 240px);
+    margin: 50px 20px;
+    width: 100%;
 
     @media (${QUERIES.large}) {
         margin: 50px 8vw 0 10vw;

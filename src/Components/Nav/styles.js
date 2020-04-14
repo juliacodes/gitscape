@@ -1,6 +1,17 @@
 import styled from 'styled-components';
+import { Container } from '../../Styling/styles';
 import Logo from '../../Images/logo.png';
 import Check from '../../Images/check.png';
+import { QUERIES } from '../../Styling/styles';
+
+export const ContainerNav = styled(Container)`
+    width: 240px;
+    display: none;
+
+    @media (${QUERIES.large}) {
+        display: block;
+    }
+`;
 export const NavContent = styled.div`
     width: 20vw;
     min-width: 240px;

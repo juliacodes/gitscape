@@ -21,7 +21,7 @@ const App = () => {
     }
     const [cards, setCards] = useState([]);
 
-    let addNewCard = cardInfo => {
+    let addNewCard = (cardInfo) => {
         setCards(cardInfo);
     };
 
@@ -36,7 +36,6 @@ const App = () => {
                     <CardList cards={cards} />
                 </MainContainer>
                 <Trending />
-                {/* <UpArrow /> */}
             </Layout>
         </ThemeProvider>
     );
