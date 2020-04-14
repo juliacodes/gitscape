@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Container } from '../../Styling/styles';
-import Logo from '../../Images/logo.png';
+import Logo from '../../Images/logo-large.png';
 import Check from '../../Images/check.png';
 import { QUERIES } from '../../Styling/styles';
 
@@ -29,10 +29,10 @@ export const section = styled.div`
 export const LogoCont = styled.div`
     background-image: url(${Logo});
     width: 160px;
-    margin: 0 auto;
+    margin: 70px auto 0 auto;
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 150px;
+    height: 80px;
 `;
 
 export const LinkCont = styled.div`

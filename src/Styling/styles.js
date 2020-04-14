@@ -57,3 +57,15 @@ export const RightContainer = styled(Container)`
         display: block;
     }
 `;
+
+export const Logo = styled.img`
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    @media (${QUERIES.large}) {
+        display: none;
+    }
+`;

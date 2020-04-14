@@ -4,5 +4,6 @@ export {
     Layout,
     Container,
     MainContainer,
-    RightContaienr
+    RightContaienr,
+    Logo,
 } from './styles';

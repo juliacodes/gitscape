@@ -5,10 +5,10 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './Styling/theme';
 import { GlobalStyles } from './Styling/global';
 import Trending from './Components/Trending';
-
-import { Layout, MainContainer } from './Styling/styles';
+import { Layout, MainContainer, Logo } from './Styling/styles';
 import Nav from './Components/Nav';
 
+import LogoImg from './Images/logo.png';
 const App = () => {
     const [theme, setTheme] = useState('light');
 
@@ -30,7 +30,9 @@ const App = () => {
             <Layout>
                 <GlobalStyles />
                 <Nav onClick={toggleTheme} />
+
                 <MainContainer>
+                    <Logo src={LogoImg} />
                     <Form onSubmit={addNewCard} />
                     <h1>Discover Repositories</h1>
                     <CardList cards={cards} />
