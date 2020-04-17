@@ -13,7 +13,7 @@ class Trending extends React.Component {
             users: [],
             randomNum: Math.floor(Math.random() * Math.floor(10)),
             randomNum2: Math.floor(Math.random() * Math.floor(10)),
-            language: 'javascript'
+            language: 'javascript',
         };
     }
 
@@ -22,13 +22,13 @@ class Trending extends React.Component {
             .get(
                 `https://github-trending-api.now.sh/repositories?language=${this.state.language}&since=weekly`
             )
-            .then(resp => {
+            .then((resp) => {
                 this.setState({
                     trending1: resp.data[this.state.randomNum],
-                    trending2: resp.data[this.state.randomNum2]
+                    trending2: resp.data[this.state.randomNum2],
                 });
             })
-            .catch(error => {
+            .catch((error) => {
                 console.log('Trending error');
             });
 
@@ -36,18 +36,18 @@ class Trending extends React.Component {
             .get(
                 `https://github-trending-api.now.sh/developers?language=${this.state.language}&since=weekly`
             )
-            .then(resp => {
+            .then((resp) => {
                 this.setState({
-                    users: resp.data
+                    users: resp.data,
                 });
                 console.log(this.state.users);
             })
-            .catch(error => {
+            .catch((error) => {
                 console.log('Trending User error');
             });
     }
     render() {
-        const userList = this.state.users.slice(0, 10).map(user => (
+        const userList = this.state.users.slice(0, 10).map((user) => (
             <a href={user.url}>
                 <UserIcon src={user.avatar} />
             </a>
@@ -58,7 +58,7 @@ class Trending extends React.Component {
                 <Container
                     style={{
                         flexDirection: 'row',
-                        alignItems: 'baseline'
+                        alignItems: 'baseline',
                     }}
                 >
                     <svg
@@ -94,7 +94,7 @@ class Trending extends React.Component {
                 <hr />
                 <Container
                     style={{
-                        flexDirection: 'column'
+                        flexDirection: 'column',
                     }}
                 >
                     <h3>{this.state.trending1.author}</h3>
@@ -103,7 +103,7 @@ class Trending extends React.Component {
                 </Container>
                 <Container
                     style={{
-                        flexDirection: 'column'
+                        flexDirection: 'column',
                     }}
                 >
                     <h3>{this.state.trending2.author}</h3>
@@ -116,7 +116,7 @@ class Trending extends React.Component {
                 </Container>
                 <Container
                     style={{
-                        flexDirection: 'column'
+                        flexDirection: 'column',
                     }}
                 >
                     <Container
@@ -124,7 +124,7 @@ class Trending extends React.Component {
                             flexDirection: 'row',
                             flexWrap: 'wrap',
                             width: '100%',
-                            justifyContent: 'space-around'
+                            justifyContent: 'space-around',
                         }}
                     >
                         {userList}

@@ -34,8 +34,8 @@ export const Container = styled.div`
 `;
 
 export const MainContainer = styled(Container)`
-    margin: 50px 20px;
-    width: 100%;
+    margin: 20px 20px;
+    width: calc(100% - 40px);
 
     @media (${QUERIES.large}) {
         margin: 50px 8vw 0 10vw;
@@ -62,7 +62,7 @@ export const Logo = styled.img`
     width: 120px;
     height: auto;
     display: block;
-    margin: 0;
+    margin: 20px auto 40px auto;
     padding: 0;
 
     @media (${QUERIES.large}) {

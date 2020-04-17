@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { QUERIES } from '../../Styling/styles';
 
 export const CardWrap = styled.div`
     width: 100%;
@@ -16,7 +17,7 @@ export const CardCont = styled.div`
 `;
 
 export const LeftContent = styled.div`
-    width: calc(100% - 70px);
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,6 +26,10 @@ export const LeftContent = styled.div`
         align-self: unset;
         max-height: 60px;
         overflow: hidden;
+    }
+
+    @media (${QUERIES.large}) {
+        width: calc(100% - 70px);
     }
 `;
 
@@ -45,9 +50,13 @@ export const RightContent = styled.div`
     right: -45px;
     top: 0;
     height: 100%;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-evenly;
+
+    @media (${QUERIES.large}) {
+        display: flex;
+    }
 `;
 
 export const Count = styled.div`

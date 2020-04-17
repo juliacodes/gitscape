@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import 'circular-std';
-import { COLORS } from '../Styling/styles';
+import { COLORS, QUERIES } from '../Styling/styles';
 
 export const GlobalStyles = createGlobalStyle`
   *,
@@ -19,13 +19,19 @@ export const GlobalStyles = createGlobalStyle`
 
   h1, h2, h3, h4{
     font-weight: 900;
-    font-size: 32px;
-    margin-top: 55px;
+    font-size: 28px;
+    margin-top: 35px;
     display: flex;
     align-items: center;
     letter-spacing: 0.01em;
     padding: 0;
     color: ${({ theme }) => theme.heading};
+
+    @media (${QUERIES.large}) {
+        font-size: 32px;
+    margin-top: 55px;
+
+    }
   }
 
   h2{

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
     ContainerNav,
     NavContent,
@@ -10,6 +10,10 @@ import {
     Checkbox,
 } from './styles';
 const Nav = (props) => {
+    useEffect(() => {
+        document.getElementById('a').checked = false;
+    }, []);
+
     function toggleTheme(event) {
         props.onClick(event.target);
     }
@@ -59,13 +63,7 @@ const Nav = (props) => {
                 </Menu>
                 <Menu>
                     <em>language</em>
-                    <Input
-                        type='text'
-                        // value={query}
-                        // onChange={event => setQuery(event.target.value)}
-                        placeholder='Search'
-                        required
-                    />
+                    <Input type='text' placeholder='Search' required />
                     <br />
                     <Checkbox>
                         <input
@@ -85,6 +83,24 @@ const Nav = (props) => {
                             value='Bike'
                         />
                         <label for='vehicle1'> Typescript</label>
+                    </Checkbox>
+                    <Checkbox>
+                        <input
+                            type='checkbox'
+                            id='vehicle1'
+                            name='vehicle1'
+                            value='Bike'
+                        />
+                        <label for='vehicle1'> Java</label>
+                    </Checkbox>
+                    <Checkbox>
+                        <input
+                            type='checkbox'
+                            id='vehicle1'
+                            name='vehicle1'
+                            value='Bike'
+                        />
+                        <label for='vehicle1'> Python</label>
                     </Checkbox>
                 </Menu>
                 <ToggleCont>

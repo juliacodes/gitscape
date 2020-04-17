@@ -7,6 +7,7 @@ import { GlobalStyles } from './Styling/global';
 import Trending from './Components/Trending';
 import { Layout, MainContainer, Logo } from './Styling/styles';
 import Nav from './Components/Nav';
+import Ham from './Components/Ham';
 
 import LogoImg from './Images/logo.png';
 const App = () => {
@@ -32,7 +33,10 @@ const App = () => {
                 <Nav onClick={toggleTheme} />
 
                 <MainContainer>
+                    <Ham />
+
                     <Logo src={LogoImg} />
+
                     <Form onSubmit={addNewCard} />
                     <h1>Discover Repositories</h1>
                     <CardList cards={cards} />
